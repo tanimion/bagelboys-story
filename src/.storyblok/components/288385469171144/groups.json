@@ -1,0 +1,16 @@
+[
+	{
+		"name": "components",
+		"id": 96436546535366,
+		"uuid": "61f483cc-0079-4c1e-9d2f-0bb8c1cdfa03",
+		"parent_id": null,
+		"parent_uuid": null
+	},
+	{
+		"name": "pages",
+		"id": 96436579491783,
+		"uuid": "df3ee60b-4f27-48ff-8c22-460a62f3d685",
+		"parent_id": null,
+		"parent_uuid": null
+	}
+]

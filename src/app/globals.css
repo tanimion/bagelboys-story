@@ -1,0 +1,303 @@
+/** biome-ignore-all lint/complexity/noImportantStyles: false-positive */
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "tailwindcss-animated";
+
+@font-face {
+	font-family: "DIN Next LT Pro Regular";
+	src: url("https://db.onlinewebfonts.com/t/93a467f70a3e7b27a9b52a686f351dbe.eot");
+	src:
+		url("https://db.onlinewebfonts.com/t/93a467f70a3e7b27a9b52a686f351dbe.eot?#iefix")
+		format("embedded-opentype"),
+		url("https://db.onlinewebfonts.com/t/93a467f70a3e7b27a9b52a686f351dbe.woff2")
+		format("woff2"),
+		url("https://db.onlinewebfonts.com/t/93a467f70a3e7b27a9b52a686f351dbe.woff")
+		format("woff"),
+		url("https://db.onlinewebfonts.com/t/93a467f70a3e7b27a9b52a686f351dbe.ttf")
+		format("truetype"),
+		url("https://db.onlinewebfonts.com/t/93a467f70a3e7b27a9b52a686f351dbe.svg#DIN Next LT Pro Regular")
+		format("svg");
+}
+
+@custom-variant dark (&:is(.dark *));
+
+/* global.css */
+/* ::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+} */
+
+body {
+	/* -ms-overflow-style: none;
+  scrollbar-width: none; */
+	font-family: "DIN Next LT Pro Regular";
+}
+
+/* Geometric 415 - 100 */
+
+@theme inline {
+	/* Custom start */
+	--color-theme-black: #0a0a0a;
+	--color-theme-dark-gray: #adadad;
+	--color-theme-gray: #f2f2f2;
+	--color-theme-white: #ffffff;
+	--color-theme-dark-green: #227725;
+	--color-theme-green: #a3f5a6;
+	--color-theme-light-green: #e3fde4;
+	/* Custom end */
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+	--color-sidebar-ring: var(--sidebar-ring);
+	--color-sidebar-border: var(--sidebar-border);
+	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+	--color-sidebar-accent: var(--sidebar-accent);
+	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+	--color-sidebar-primary: var(--sidebar-primary);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--color-sidebar: var(--sidebar);
+	--color-chart-5: var(--chart-5);
+	--color-chart-4: var(--chart-4);
+	--color-chart-3: var(--chart-3);
+	--color-chart-2: var(--chart-2);
+	--color-chart-1: var(--chart-1);
+	--color-ring: var(--ring);
+	--color-input: var(--input);
+	--color-border: var(--border);
+	--color-destructive: var(--destructive);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-accent: var(--accent);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-muted: var(--muted);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-secondary: var(--secondary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-primary: var(--primary);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-popover: var(--popover);
+	--color-card-foreground: var(--card-foreground);
+	--color-card: var(--card);
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+	--radius: 0.625rem;
+	--card: oklch(1 0 0);
+	--card-foreground: oklch(0.145 0 0);
+	--popover: oklch(1 0 0);
+	--popover-foreground: oklch(0.145 0 0);
+	--primary: oklch(0.205 0 0);
+	--primary-foreground: oklch(0.985 0 0);
+	--secondary: oklch(0.97 0 0);
+	--secondary-foreground: oklch(0.205 0 0);
+	--muted: oklch(0.97 0 0);
+	--muted-foreground: oklch(0.556 0 0);
+	--accent: oklch(0.97 0 0);
+	--accent-foreground: oklch(0.205 0 0);
+	--destructive: oklch(0.577 0.245 27.325);
+	--border: oklch(0.922 0 0);
+	--input: oklch(0.922 0 0);
+	--ring: oklch(0.708 0 0);
+	--chart-1: oklch(0.646 0.222 41.116);
+	--chart-2: oklch(0.6 0.118 184.704);
+	--chart-3: oklch(0.398 0.07 227.392);
+	--chart-4: oklch(0.828 0.189 84.429);
+	--chart-5: oklch(0.769 0.188 70.08);
+	--sidebar: oklch(0.985 0 0);
+	--sidebar-foreground: oklch(0.145 0 0);
+	--sidebar-primary: oklch(0.205 0 0);
+	--sidebar-primary-foreground: oklch(0.985 0 0);
+	--sidebar-accent: oklch(0.97 0 0);
+	--sidebar-accent-foreground: oklch(0.205 0 0);
+	--sidebar-border: oklch(0.922 0 0);
+	--sidebar-ring: oklch(0.708 0 0);
+
+	/* bg colors for light mode */
+	--bg-color-1: rgba(107, 196, 255, 0.53);
+	--bg-color-2: rgba(208, 107, 255, 0.53);
+	--bg-color-3: rgba(255, 107, 207, 0.53);
+	--bg-color-4: rgba(255, 181, 107, 0.53);
+	--background: oklch(1 0 0);
+	--foreground: oklch(0.145 0 0);
+
+	--menu-height: 7.69rem;
+	--dot-translate: -2.5rem;
+}
+
+@media (max-width: 768px) {
+	:root {
+		--menu-height: 4.5rem;
+		--dot-translate: -1.5rem;
+	}
+}
+
+.dark {
+	--background: oklch(0.145 0 0);
+	--foreground: oklch(0.985 0 0);
+	--card: oklch(0.205 0 0);
+	--card-foreground: oklch(0.985 0 0);
+	--popover: oklch(0.205 0 0);
+	--popover-foreground: oklch(0.985 0 0);
+	--primary: oklch(0.922 0 0);
+	--primary-foreground: oklch(0.205 0 0);
+	--secondary: oklch(0.269 0 0);
+	--secondary-foreground: oklch(0.985 0 0);
+	--muted: oklch(0.269 0 0);
+	--muted-foreground: oklch(0.708 0 0);
+	--accent: oklch(0.269 0 0);
+	--accent-foreground: oklch(0.985 0 0);
+	--destructive: oklch(0.704 0.191 22.216);
+	--border: oklch(1 0 0 / 10%);
+	--input: oklch(1 0 0 / 15%);
+	--ring: oklch(0.556 0 0);
+	--chart-1: oklch(0.488 0.243 264.376);
+	--chart-2: oklch(0.696 0.17 162.48);
+	--chart-3: oklch(0.769 0.188 70.08);
+	--chart-4: oklch(0.627 0.265 303.9);
+	--chart-5: oklch(0.645 0.246 16.439);
+	--sidebar: oklch(0.205 0 0);
+	--sidebar-foreground: oklch(0.985 0 0);
+	--sidebar-primary: oklch(0.488 0.243 264.376);
+	--sidebar-primary-foreground: oklch(0.985 0 0);
+	--sidebar-accent: oklch(0.269 0 0);
+	--sidebar-accent-foreground: oklch(0.985 0 0);
+	--sidebar-border: oklch(1 0 0 / 10%);
+	--sidebar-ring: oklch(0.556 0 0);
+
+	/* bg colors for light mode */
+	--bg-color-1: rgba(0, 80, 128, 0.8);
+	--bg-color-2: rgba(0, 95, 44, 0.8);
+	--bg-color-3: rgba(39, 1, 62, 0.8);
+	--bg-color-4: rgba(146, 32, 51, 0.7);
+}
+
+.grecaptcha-badge {
+	visibility: hidden;
+}
+html {
+	color: black;
+}
+
+.richtext {
+	p {
+		margin-bottom: 1rem;
+	}
+
+	ul,
+	ol {
+		margin-left: 2rem;
+	}
+
+	ul {
+		list-style: disc;
+	}
+	ul li::marker {
+		font-size: 1.3rem !important;
+	}
+	ol {
+		list-style: decimal;
+	}
+}
+
+@layer utilities {
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+			transform: scale(0.95);
+		}
+		100% {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	.animate-fade-in {
+		animation: fadeIn 1.5s ease-out forwards;
+	}
+	.important-font-size {
+		font-size: 15px !important;
+	}
+
+	@media (min-width: 768px) {
+		.important-font-size {
+			font-size: 1.0625rem !important;
+		}
+	}
+}
+
+/*=========== Global CSS ============*/
+main {
+	@apply mt-[92px];
+}
+
+/*=========== Header CSS ============*/
+.header-wrapper {
+	@apply w-full flex items-center justify-between gap-4 px-4 py-7 bg-[#F8F7F2] fixed top-0 left-0 z-50 h-[92px];
+}
+.header-wrapper .header-logo {
+	@apply relative block w-[132px] h-auto;
+}
+.header-wrapper .header-logo figure {
+	@apply absolute top-[-30px] left-0 w-full h-full m-0;
+}
+.menu-box > div {
+	@apply max-w-[650px] w-full flex justify-between items-center gap-8;
+}
+.menu-box div a {
+	@apply text-base font-normal text-[#A66C23] uppercase;
+}
+.menu-box div a h1 {
+	@apply border-b-2 border-solid border-b-transparent transition-all duration-300;
+}
+.menu-box div a h1:hover {
+	@apply border-b-2 border-solid border-b-[#A66C23];
+}
+.global-language-switcher {
+	@apply text-base font-normal text-[#A66C23] uppercase;
+}
+.global-language-switcher > button {
+	@apply max-w-14 w-full gap-2 border-0 outline-0 shadow-none cursor-pointer;
+}
+.global-language-switcher > button:focus-visible {
+	@apply border-0 outline-0 shadow-none ring-0;
+}
+.global-language-switcher > button span {
+	@apply min-w-5 text-center;
+}
+.global-language-switcher > button svg {
+	@apply text-[#A66C23];
+}
+.global-language-switcher > button[aria-expanded="false"] svg {
+	@apply rotate-0 transition-all duration-300;
+}
+.global-language-switcher > button[aria-expanded="true"] svg {
+	@apply rotate-180 transition-all duration-300 text-[#A66C23];
+}
+
+/*=========== Cards CSS ==============*/
+.primary-card-title {
+	@apply text-2xl md:text-4xl font-normal uppercase text-[#A66C23];
+}
+.spacious-desc {
+	@apply text-sm md:text-base font-normal leading-6 text-[#4B4E53];
+}
+.card-button {
+	@apply inline-block no-underline px-6 md:px-10 py-2.5 md:py-[13px] text-sm md:text-[18px] leading-normal font-normal uppercase text-[#FFFFFF] bg-[#A66C23] border border-solid border-[#A66C23] rounded-md transition-all duration-300;
+}
+/*=========== Footer CSS ============*/
+
+
+/*=========== Review sliders CSS ============*/
+.review-arrows {
+	@apply cursor-pointer size-[30px];
+}
+.review-arrows.swiper-button-prev:after, .review-arrows.swiper-button-next:after {
+	@apply text-xs text-white font-normal;
+}
