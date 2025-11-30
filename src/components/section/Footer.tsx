@@ -1,19 +1,18 @@
 import { StoryblokServerComponent } from "@storyblok/react/rsc";
-import type { FooterItem } from "@/.storyblok/types/288385469171144/storyblok-components";
+import type { FooterGrid, FooterItemBox } from "@/.storyblok/types/288385469171144/storyblok-components";
 
-const Footer = async ({ blok }: { blok?: FooterItem[] }) => {
-	if (!blok) {
-		return null; // Return null if no blok is provided
-	}
+type FooterBlocks = FooterGrid | FooterItemBox;
 
-	return (
-		<footer className="bottom-0 flex gap-4 bg-black px-5 py-8 text-white">
-			Footer
-			{blok.map((item) => (
-				<StoryblokServerComponent blok={item} key={item?._uid} />
-			))}
-		</footer>
-	);
+const Footer = async ({ blok }: { blok?: FooterBlocks[] }) => {
+  if (!blok || blok.length === 0) return null;
+
+  return (
+    <footer className="w-full">
+      {blok.map((item) => (
+        <StoryblokServerComponent blok={item} key={item._uid} />
+      ))}
+    </footer>
+  );
 };
 
 export default Footer;

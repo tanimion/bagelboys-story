@@ -6,8 +6,28 @@ import Global from "@/components/storyblok/global";
 const Footer = dynamic(() => import("@/components/section/Footer"), {
 	ssr: true,
 });
-
+const FooterGrid = dynamic(() => import("@/components/storyblok/footer/footer_grid"), {
+		ssr: true,
+});
+const FooterItemBox = dynamic(() => import("@/components/storyblok/footer/footer_item_box"), {
+		ssr: true,
+});
 const FooterItem = dynamic(() => import("@/components/storyblok/footer/footeritem"), {
+		ssr: true,
+});
+const FooterLogoBox = dynamic(() => import("@/components/storyblok/footer/footer_logo_box"), {
+		ssr: true,
+});
+const FooterTextGroup = dynamic(() => import("@/components/storyblok/footer/footer_text_group"), {
+		ssr: true,
+});
+const SocialMediaLinks = dynamic(() => import("@/components/storyblok/footer/social_media_links"), {
+		ssr: true,
+});
+const FooterContactBox = dynamic(() => import("@/components/storyblok/footer/footer_contact_box"), {
+		ssr: true,
+});
+const SocialMediaItem = dynamic(() => import("@/components/storyblok/footer/social_media_item"), {
 		ssr: true,
 });
 const Section = dynamic(() => import("@/components/storyblok/section"), {
@@ -99,6 +119,13 @@ const components = {
 	text_group: TextGroup,
 	google_reviews_slider: GoogleReviewSlider,
   google_review_item: GoogleReviewItem,
+  footer_grid: FooterGrid,
+  footer_logo_box: FooterLogoBox,
+  footer_item_box: FooterItemBox,
+  footer_text_group: FooterTextGroup,
+	social_media_links: SocialMediaLinks,
+	social_media_item: SocialMediaItem,
+	footer_contact_box: FooterContactBox,
 };
 
 export const getStoryblokApi = storyblokInit({
