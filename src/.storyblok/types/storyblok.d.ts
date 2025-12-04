@@ -29,6 +29,7 @@ export interface FooterItem {
 }
 
 export interface Global {
+  header_logo?: StoryblokAsset;
 	burger_menu?: Menu[];
 	footer?: FooterGrid[];
 	component: "global";
