@@ -4,13 +4,19 @@ import type {
 	StoryblokRichtext,
 	StoryblokMultilink,
 	StoryblokAsset,
-} from "../storyblok";
+} from "@/storyblok";
 export interface Blog {
 	title?: string;
 	description?: StoryblokRichtext;
 	component: "blog";
 	_uid: string;
 	[k: string]: unknown;
+}
+
+// src/storyblok/storyblok.d.ts
+export interface StoryblokAsset {
+  filename: string;
+  alt?: string;
 }
 
 export interface Feature {
@@ -61,7 +67,7 @@ export interface SectionWrapper {
   body?: (
     | Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase
   )[];
-  padding?: "px-4 lg:px-0" | "px-4" | "px-8";
+  gap_size?: "extra-small" | "small" | "medium" | "large";
   overflow?: "hidden" | "visible";
   component: "section_wrapper";
   _uid: string;
@@ -82,9 +88,7 @@ export interface IconBoxGrid {
 
 export interface FooterGrid {
   bg_image?: StoryblokAsset;
-  columns?: (
-    | FooterLogoBox | FooterItemBox
-  )[];
+  columns?: (FooterLogoBox | FooterItemBox)[];
   copyright_text?: string;
   component: "footer_grid";
   _uid: string;

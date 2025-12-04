@@ -15,7 +15,7 @@ const overflowMap: Record<string, string> = {
 };
 
 const SectionWrapper = ({ blok }: { blok: SectionWrapperType }) => {
-  const gapKey = blok.gap_size && gapMap[blok.gap_size] ? blok.gap_size : "medium";
+  const gapKey = blok.gap_size && gapMap[blok.gap_size] ? blok.gap_size : "medium"; // Default to "medium"
   const gapClass = gapMap[gapKey];
 
   const paddingClass = blok.padding || 'px-4';

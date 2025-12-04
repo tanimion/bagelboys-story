@@ -1,9 +1,9 @@
 import { StoryblokServerComponent } from "@storyblok/react/rsc";
 import Image from "next/image";
 import type { Menu } from "@/.storyblok/types/288385469171144/storyblok-components";
+import { StoryblokAsset } from "@/.storyblok/types/288385469171144/storyblok-components";
 import LanguageSwitcher from "../ui/language-switcher";
 
-// Correctly type header_logo as StoryblokAsset
 type HeaderProps = {
   burger_menu?: Menu[];
   header_logo?: StoryblokAsset; // Ensure correct type here

@@ -11,6 +11,8 @@ const IconBoxGrid = ({ blok }: { blok: IconBoxGridType }) => {
   const maxWidthKey = typeof blok.max_width === "string" && maxWidthMap[blok.max_width] ? blok.max_width : "default";
   const maxWidthClass = maxWidthMap[maxWidthKey];
 
+  const topContent = blok.top_content ?? [];
+
   return (
     <section
       {...storyblokEditable(blok as SbBlokData)} className="w-full bg-transparent py-[140px] px-4 relative"
@@ -22,9 +24,9 @@ const IconBoxGrid = ({ blok }: { blok: IconBoxGridType }) => {
         backgroundPosition: "center",
       }}
     >
-      {blok.top_content?.length > 0 && (
+      {topContent.length > 0 && (
         <div className={`${maxWidthClass} mb-10`}>
-          {blok.top_content.map((nested) => (
+          {topContent.map((nested) => (
             <StoryblokServerComponent blok={nested} key={nested._uid} />
           ))}
         </div>

@@ -4,13 +4,18 @@ import type {
 	StoryblokRichtext,
 	StoryblokMultilink,
 	StoryblokAsset,
-} from "../storyblok";
+} from "@/storyblok";
 export interface Blog {
 	title?: string;
 	description?: StoryblokRichtext;
 	component: "blog";
 	_uid: string;
 	[k: string]: unknown;
+}
+
+export interface StoryblokAsset {
+  filename: string;
+  alt?: string;
 }
 
 export interface Feature {
@@ -21,41 +26,133 @@ export interface Feature {
 }
 
 export interface FooterItem {
-	items?: Links[];
-	component: "footer_item";
+  title?: string;
+  items?: Links[];
+  component: "footer_item";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface Global {
+  header_logo?: StoryblokAsset;
+	burger_menu?: Menu[];
+	footer?: FooterGrid[];
+	component: "global";
 	_uid: string;
 	[k: string]: unknown;
 }
 
-export interface Global {
-	burger_menu?: Menu[];
-	footer?: FooterItem[];
-	component: "global";
+export interface Page {
+	body?: (
+		| Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase
+	)[];
+	robots?: Robots[];
+	component: "page";
 	_uid: string;
 	[k: string]: unknown;
 }
 
 export interface Grid {
 	columns?: (
-		| Blog
-		| Feature
-		| FooterItem
-		| Global
-		| Grid
-		| Hero
-		| Item
-		| Links
-		| Menu
-		| MenuItem
-		| Page
-		| Robots
-		| Section
-		| SubMenu
-		| Teaser
+		| Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase
 	)[];
 	component: "grid";
 	_uid: string;
 	[k: string]: unknown;
+}
+
+export interface SectionWrapper {
+  bg_image?: StoryblokAsset;
+  body?: (
+    | Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase
+  )[];
+  gap_size?: "extra-small" | "small" | "medium" | "large";
+  overflow?: "hidden" | "visible";
+  component: "section_wrapper";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface IconBoxGrid {
+  bg_image?: StoryblokAsset;
+  max_width?: string;
+  top_content?: (
+    | Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase
+  )[];
+  items?: IconBoxItem[];
+  component: "icon_box_grid";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface FooterGrid {
+  bg_image?: StoryblokAsset;
+  columns?: (FooterLogoBox | FooterItemBox)[];
+  copyright_text?: string;
+  component: "footer_grid";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface FooterItemBox {
+  columns?: (
+     | FooterItem | FooterContactBox
+  )[];
+  component: "footer_item_box";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface FooterContactBox {
+  columns?: (
+    | FooterTextGroup
+    | SocialMediaLinks
+  )[];
+  component: "footer_contact_box";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface FooterLogoBox {
+  title_1?: string;
+  title_2?: string;
+  title_3?: string;
+  logo?: StoryblokAsset;
+  component: "footer_logo_box";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface FooterTextGroup {
+  title?: string;
+  text?: StoryblokRichtext;
+  component: "footer_text_group";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface SocialMediaLinks {
+  links?: SocialMediaItem[];
+  component: "social_media_links";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface SocialMediaItem {
+  icon?: StoryblokAsset;
+  url?: StoryblokMultilink;
+  component: "social_media_item";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface ThreeImageShowcase {
+  images?: StoryblokAsset[];
+  gap_size?: "small" | "medium" | "large";
+  radius_size?: "small" | "medium" | "large";
+  component: "three_image_showcase";
+  _uid: string;
+  [k: string]: unknown;
 }
 
 export interface Hero {
@@ -64,6 +161,81 @@ export interface Hero {
 	component: "hero";
 	_uid: string;
 	[k: string]: unknown;
+}
+
+export interface IconBoxItem {
+  image?: StoryblokAsset;
+  title?: string;
+  description?: StoryblokRichtext;
+  component: "icon_box_item";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface TextGroup {
+  title?: string;
+  description?: StoryblokRichtext;
+  component: "text_group";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface BgHeroBanner {
+  bg_image?: StoryblokAsset;
+  main_image?: StoryblokAsset;
+  overlay?: boolean;
+  component: "bg_hero_banner";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface LeftCard {
+  image?: StoryblokAsset;
+  title?: string;
+  description?: StoryblokRichtext;
+  link?: Exclude<
+    StoryblokMultilink,
+    { linktype?: "email" } | { linktype?: "asset" }
+  >;
+  link_text?: string;
+  component: "left_card";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface RightCard {
+  image?: StoryblokAsset;
+  title?: string;
+  description?: StoryblokRichtext;
+  link?: Exclude<
+    StoryblokMultilink,
+    { linktype?: "email" } | { linktype?: "asset" }
+  >;
+  link_text?: string;
+  component: "right_card";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface GoogleReviewItem {
+  name?: string;
+  subtitle?: string;
+  rating?: number;
+  text?: StoryblokRichtext;
+  cta_label?: string;
+  component: "google_review_item";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface GoogleReviewsSlider {
+  title?: string;
+  rating_label?: string;
+  reviews_note?: string;
+  reviews?: GoogleReviewItem[];
+  component: "google_reviews_slider";
+  _uid: string;
+  [k: string]: unknown;
 }
 
 export interface Item {
@@ -99,30 +271,6 @@ export interface MenuItem {
 	>;
 	SubItems?: SubMenu[];
 	component: "menu_item";
-	_uid: string;
-	[k: string]: unknown;
-}
-
-export interface Page {
-	body?: (
-		| Blog
-		| Feature
-		| FooterItem
-		| Global
-		| Grid
-		| Hero
-		| Item
-		| Links
-		| Menu
-		| MenuItem
-		| Page
-		| Robots
-		| Section
-		| SubMenu
-		| Teaser
-	)[];
-	robots?: Robots[];
-	component: "page";
 	_uid: string;
 	[k: string]: unknown;
 }

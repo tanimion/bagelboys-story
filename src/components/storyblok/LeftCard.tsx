@@ -3,7 +3,8 @@ import { type SbBlokData, storyblokEditable, renderRichText } from "@storyblok/r
 import parse from "html-react-parser";
 import type { LeftCard as LeftCardType } from "@/.storyblok/types/288385469171144/storyblok-components";
 
-const maxWidthMap: Record<string, string> = {
+// Tailwind maps for Storyblok options
+const maxWidthMap: Record<"default" | "wide" | "full" | "constrained", string> = {
   default: "max-w-[1246px] mx-auto",
   wide: "max-w-[1440px] mx-auto",
   full: "w-full",
@@ -11,12 +12,19 @@ const maxWidthMap: Record<string, string> = {
 };
 
 const LeftCard = ({ blok }: { blok: LeftCardType }) => {
-  const maxWidthKey = blok.max_width && maxWidthMap[blok.max_width] ? blok.max_width : "default";
+  // Check if blok.max_width is valid, otherwise default to "default"
+  const maxWidthKey: "default" | "wide" | "full" | "constrained" = 
+    blok.max_width && maxWidthMap[blok.max_width as keyof typeof maxWidthMap]
+      ? (blok.max_width as "default" | "wide" | "full" | "constrained")
+      : "default"; // Default to "default" if max_width is invalid
+  
   const maxWidthClass = maxWidthMap[maxWidthKey];
+
   return (
     <section
       {...storyblokEditable(blok as SbBlokData)}
-      className={`${maxWidthClass} w-full mx-auto lg:px-0 flex flex-col md:flex-row justify-center items-center gap-10 md:gap-[60px] bg-transparent`}>
+      className={`${maxWidthClass} w-full mx-auto lg:px-0 flex flex-col md:flex-row justify-center items-center gap-10 md:gap-[60px] bg-transparent`}
+    >
       {blok.image?.filename && (
         <div className="max-w-[505px] w-full">
           <figure>
@@ -42,7 +50,11 @@ const LeftCard = ({ blok }: { blok: LeftCardType }) => {
           </div>
         )}
         {blok.link?.url && blok.link_text && (
-          <a href={blok.link.url} target={blok.link.target === "_blank" ? "_blank" : undefined} className="card-button mt-2">
+          <a
+            href={blok.link.url}
+            target={blok.link.target === "_blank" ? "_blank" : undefined}
+            className="card-button mt-2"
+          >
             {blok.link_text}
           </a>
         )}
