@@ -30,6 +30,9 @@ const FooterContactBox = dynamic(() => import("@/components/storyblok/footer/foo
 const SocialMediaItem = dynamic(() => import("@/components/storyblok/footer/social_media_item"), {
 		ssr: true,
 });
+const ThreeImageShowcase = dynamic(() => import("@/components/storyblok/ThreeImageShowcase"), {
+		ssr: true,
+});
 const Section = dynamic(() => import("@/components/storyblok/section"), {
 	ssr: true,
 });
@@ -126,6 +129,7 @@ const components = {
 	social_media_links: SocialMediaLinks,
 	social_media_item: SocialMediaItem,
 	footer_contact_box: FooterContactBox,
+	three_image_showcase: ThreeImageShowcase,
 };
 
 export const getStoryblokApi = storyblokInit({

@@ -38,7 +38,7 @@ export interface Global {
 
 export interface Page {
 	body?: (
-		| Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks
+		| Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase
 	)[];
 	robots?: Robots[];
 	component: "page";
@@ -48,7 +48,7 @@ export interface Page {
 
 export interface Grid {
 	columns?: (
-		| Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks
+		| Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase
 	)[];
 	component: "grid";
 	_uid: string;
@@ -58,8 +58,10 @@ export interface Grid {
 export interface SectionWrapper {
   bg_image?: StoryblokAsset;
   body?: (
-    | Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks
+    | Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase
   )[];
+  padding?: "px-4 lg:px-0" | "px-4" | "px-8";
+  overflow?: "hidden" | "visible";
   component: "section_wrapper";
   _uid: string;
   [k: string]: unknown;
@@ -69,7 +71,7 @@ export interface IconBoxGrid {
   bg_image?: StoryblokAsset;
   max_width?: string;
   top_content?: (
-    | Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks
+    | Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase
   )[];
   items?: IconBoxItem[];
   component: "icon_box_grid";
@@ -136,6 +138,15 @@ export interface SocialMediaItem {
   icon?: StoryblokAsset;
   url?: StoryblokMultilink;
   component: "social_media_item";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface ThreeImageShowcase {
+  images?: StoryblokAsset[];
+  gap_size?: "small" | "medium" | "large";
+  radius_size?: "small" | "medium" | "large";
+  component: "three_image_showcase";
   _uid: string;
   [k: string]: unknown;
 }
