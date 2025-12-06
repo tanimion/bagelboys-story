@@ -86,6 +86,15 @@ export interface IconBoxGrid {
   [k: string]: unknown;
 }
 
+export interface SmallTextGroupGrid {
+  items?: (
+    | SmallTextGroup
+  )[];
+  component: "small_text_group_grid";
+  _uid: string;
+  [k: string]: unknown;
+}
+
 export interface FooterGrid {
   bg_image?: StoryblokAsset;
   columns?: (FooterLogoBox | FooterItemBox)[];
@@ -274,6 +283,14 @@ export interface MenuItem {
 	component: "menu_item";
 	_uid: string;
 	[k: string]: unknown;
+}
+
+export interface SmallTextGroup {
+  title?: string;
+  description?: StoryblokRichtext;
+  component: "small_text_group";
+  _uid: string;
+  [k: string]: unknown;
 }
 
 export interface Robots {

@@ -82,6 +82,11 @@ const IconBoxGrid = dynamic(
   { ssr: true }
 );
 
+const SmallTextGroupGrid = dynamic(
+  () => import("@/components/storyblok/SmallTextGroupGrid"),
+  { ssr: true }
+);
+
 const IconBoxItem = dynamic(
   () => import("@/components/storyblok/IconBoxItem"),
   { ssr: true }
@@ -89,6 +94,11 @@ const IconBoxItem = dynamic(
 
 const TextGroup = dynamic(
   () => import("@/components/storyblok/TextGroup"),
+  { ssr: true }
+);
+
+const SmallTextGroup = dynamic(
+  () => import("@/components/storyblok/SmallTextGroup"),
   { ssr: true }
 );
 
@@ -130,6 +140,8 @@ const components = {
 	social_media_item: SocialMediaItem,
 	footer_contact_box: FooterContactBox,
 	three_image_showcase: ThreeImageShowcase,
+	small_text_group_grid: SmallTextGroupGrid,
+	small_text_group: SmallTextGroup,
 };
 
 export const getStoryblokApi = storyblokInit({

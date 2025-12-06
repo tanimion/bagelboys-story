@@ -44,7 +44,7 @@ export interface Global {
 
 export interface Page {
 	body?: (
-		| Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase
+		| Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase | SmallTextGroup | SmallTextGroupGrid
 	)[];
 	robots?: Robots[];
 	component: "page";
@@ -54,7 +54,7 @@ export interface Page {
 
 export interface Grid {
 	columns?: (
-		| Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase
+		| Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase | SmallTextGroup | SmallTextGroupGrid
 	)[];
 	component: "grid";
 	_uid: string;
@@ -64,7 +64,7 @@ export interface Grid {
 export interface SectionWrapper {
   bg_image?: StoryblokAsset;
   body?: (
-    | Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase
+    | Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase | SmallTextGroup | SmallTextGroupGrid
   )[];
   gap_size?: "extra-small" | "small" | "medium" | "large";
   overflow?: "hidden" | "visible";
@@ -77,10 +77,19 @@ export interface IconBoxGrid {
   bg_image?: StoryblokAsset;
   max_width?: string;
   top_content?: (
-    | Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase
+    | Blog | Feature | FooterItem | Global | Grid | Hero | Item | Links | Menu | MenuItem | Page | Robots | Section | SubMenu | Teaser | BgHeroBanner | SectionWrapper | LeftCard | RightCard | IconBoxGrid | IconBoxItem | TextGroup | GoogleReviewsSlider | GoogleReviewItem | FooterGrid | FooterLogoBox | FooterItemBox | FooterTextGroup | SocialMediaLinks | ThreeImageShowcase | SmallTextGroup | SmallTextGroupGrid
   )[];
   items?: IconBoxItem[];
   component: "icon_box_grid";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface SmallTextGroupGrid {
+  items?: (
+    | SmallTextGroup
+  )[];
+  component: "small_text_group_grid";
   _uid: string;
   [k: string]: unknown;
 }
@@ -273,6 +282,14 @@ export interface MenuItem {
 	component: "menu_item";
 	_uid: string;
 	[k: string]: unknown;
+}
+
+export interface SmallTextGroup {
+  title?: string;
+  description?: StoryblokRichtext;
+  component: "small_text_group";
+  _uid: string;
+  [k: string]: unknown;
 }
 
 export interface Robots {
