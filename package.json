@@ -31,6 +31,7 @@
 		"@radix-ui/react-slot": "^1.2.2",
 		"@react-hooks-library/core": "^0.6.2",
 		"@storyblok/react": "^4.6.1",
+		"@supabase/supabase-js": "^2.86.2",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"framer-motion": "^12.16.0",

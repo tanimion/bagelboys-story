@@ -112,6 +112,20 @@ const GoogleReviewItem = dynamic(
   { ssr: true }
 );
 
+const Form = dynamic(() => import("@/components/storyblok/form/Form"), {
+  ssr: true,
+});
+
+const FormInput = dynamic(
+  () => import("@/components/storyblok/form/FormInput"),
+  { ssr: true }
+);
+
+const FormTextarea = dynamic(
+  () => import("@/components/storyblok/form/FormTextarea"),
+  { ssr: true }
+);
+
 const components = {
 	hero: Hero,
 	footer: Footer,
@@ -142,6 +156,9 @@ const components = {
 	three_image_showcase: ThreeImageShowcase,
 	small_text_group_grid: SmallTextGroupGrid,
 	small_text_group: SmallTextGroup,
+	form: Form,
+	form_input: FormInput,
+	form_textarea: FormTextarea,
 };
 
 export const getStoryblokApi = storyblokInit({

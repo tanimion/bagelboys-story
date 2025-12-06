@@ -331,3 +331,39 @@ export interface Teaser {
 	_uid: string;
 	[k: string]: unknown;
 }
+
+export interface Form {
+  action_url?: string;
+  method?: "POST" | "GET";
+  success_message?: string;
+  error_message?: string;
+  button_label?: string;
+  fields?: (FormInput | FormTextarea | FormSelect | FormCheckbox)[];
+  component: "form";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface FormInput {
+  name?: string;
+  label?: string;
+  type?: "text" | "email" | "number" | "password" | "tel";
+  required?: boolean;
+  placeholder?: string;
+  help_text?: string;
+  component: "form_input";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface FormTextarea {
+  name?: string;
+  label?: string;
+  required?: boolean;
+  placeholder?: string;
+  rows?: number;
+  help_text?: string;
+  component: "form_textarea";
+  _uid: string;
+  [k: string]: unknown;
+}
