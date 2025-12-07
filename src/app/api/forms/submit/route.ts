@@ -8,7 +8,6 @@ export async function POST(req: Request) {
     const formData = await req.formData();
     const data = Object.fromEntries(formData);
 
-    // Insert into Supabase
     const { error } = await supabaseAdmin.from("contact_submissions").insert({
       name: data.name,
       email: data.email,
@@ -17,22 +16,17 @@ export async function POST(req: Request) {
     });
 
     if (error) {
-      // redirect with error
-      return NextResponse.redirect(
-        `${req.headers.get("referer") || "/"}?error=true`,
-        302
+      return NextResponse.json(
+        { ok: false, error: error.message },
+        { status: 400 }
       );
     }
 
-    // redirect with success
-    return NextResponse.redirect(
-      `${req.headers.get("referer") || "/"}?success=true`,
-      302
-    );
+    return NextResponse.json({ ok: true });
   } catch (err: any) {
-    return NextResponse.redirect(
-      `${req.headers.get("referer") || "/"}?error=true`,
-      302
+    return NextResponse.json(
+      { ok: false, error: err.message || "Server error" },
+      { status: 500 }
     );
   }
 }
