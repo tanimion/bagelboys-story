@@ -306,3 +306,19 @@ main {
 .review-arrows.swiper-button-prev:after, .review-arrows.swiper-button-next:after {
 	@apply text-xs text-white font-normal;
 }
+
+/*======== Form CSS ========*/
+@keyframes form-alert-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-form-alert-in {
+  animation: form-alert-in 0.35s ease-out forwards;
+}
+

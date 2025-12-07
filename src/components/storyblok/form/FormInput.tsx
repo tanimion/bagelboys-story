@@ -23,7 +23,7 @@ const FormInput = ({ blok }: { blok: FormInputType }) => {
         name={blok.name}
         required={!!blok.required}
         placeholder={blok.placeholder || ""}
-        className="w-full rounded-full border border-[#D6D6D6] bg-white px-4 py-2 text-sm text-[#4B4E53] outline-none focus:border-[#A66C23]"
+        className="w-full rounded-xl border border-solid border-[#D6D6D6] bg-white px-4 py-5 text-base font-normal leading-6 text-[#4B4E53] outline-none focus:border-[#A66C23] placeholder:text-base placeholder:font-normal placeholder:leading-6 placeholder:text-[#4B4E53]"
       />
 
       {blok.help_text && (

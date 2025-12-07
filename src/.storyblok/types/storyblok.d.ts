@@ -339,8 +339,19 @@ export interface Form {
   success_message?: string;
   error_message?: string;
   button_label?: string;
-  fields?: (FormInput | FormTextarea | FormSelect | FormCheckbox)[];
+  fields?: (FormInput | FormTextarea)[];
   component: "form";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface FormColumns {
+  columns?: 1 | 2 | 3;
+  fields?: (
+    | FormInput
+    | FormTextarea
+  )[];
+  component: "form_columns";
   _uid: string;
   [k: string]: unknown;
 }
@@ -365,6 +376,53 @@ export interface FormTextarea {
   rows?: number;
   help_text?: string;
   component: "form_textarea";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface ContactFormGrid {
+  bg_color?: string;
+  border_color?: string;
+  border_radius?: number;
+  bg_image?: StoryblokAsset;
+  max_width?: "default" | "wide" | "full";
+  columns?: (ImageBox | ContactFormBox)[];
+  component: "contact_form_grid";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface ImageBox {
+  image?: StoryblokAsset;
+  width_type?: "%" | "px";
+  width_value?: number;
+  border_radius?: number;
+  object_fit?: "cover" | "contain";
+  component: "image_box";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface TextBlock {
+  title?: string;
+  description?: StoryblokRichtext;
+  align?: "left" | "center" | "right";
+  component: "text_block";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface ContactFormBox {
+  width_type?: "%" | "px";
+  width_value?: number;
+  padding?: "none" | "large";
+  children?: (
+    | TextBlock 
+    | Form
+    | FormInput
+    | FormTextarea
+  )[];
+  component: "contact_form_box";
   _uid: string;
   [k: string]: unknown;
 }

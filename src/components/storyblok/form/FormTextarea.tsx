@@ -23,7 +23,7 @@ const FormTextarea = ({ blok }: { blok: FormTextareaType }) => {
         required={!!blok.required}
         rows={rows}
         placeholder={blok.placeholder || ""}
-        className="w-full rounded-3xl border border-[#D6D6D6] bg-white px-4 py-3 text-sm text-[#4B4E53] outline-none focus:border-[#A66C23] resize-none"
+        className="w-full rounded-xl border border-solid border-[#D6D6D6] bg-white px-4 py-5 text-base font-normal leading-6 text-[#4B4E53] outline-none focus:border-[#A66C23] placeholder:text-base placeholder:font-normal placeholder:leading-6 placeholder:text-[#4B4E53] resize-none"
       />
 
       {blok.help_text && (

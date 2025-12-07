@@ -116,6 +116,10 @@ const Form = dynamic(() => import("@/components/storyblok/form/Form"), {
   ssr: true,
 });
 
+const FormColumns = dynamic(() => import("@/components/storyblok/form/FormColumns"), {
+  ssr: true,
+});
+
 const FormInput = dynamic(
   () => import("@/components/storyblok/form/FormInput"),
   { ssr: true }
@@ -123,6 +127,26 @@ const FormInput = dynamic(
 
 const FormTextarea = dynamic(
   () => import("@/components/storyblok/form/FormTextarea"),
+  { ssr: true }
+);
+
+const ContactFormGrid = dynamic(
+  () => import("@/components/storyblok/ContactFormGrid"),
+  { ssr: true }
+);
+
+const ImageBox = dynamic(
+  () => import("@/components/storyblok/ImageBox"),
+  { ssr: true }
+);
+
+const ContactFormBox = dynamic(
+  () => import("@/components/storyblok/ContactFormBox"),
+  { ssr: true }
+);
+
+const TextBlock = dynamic(
+  () => import("@/components/storyblok/TextBlock"),
   { ssr: true }
 );
 
@@ -159,6 +183,11 @@ const components = {
 	form: Form,
 	form_input: FormInput,
 	form_textarea: FormTextarea,
+	form_columns: FormColumns,
+	contact_form_grid: ContactFormGrid,
+	contact_form_box: ContactFormBox,
+	image_box: ImageBox,
+	text_block: TextBlock,
 };
 
 export const getStoryblokApi = storyblokInit({
