@@ -317,4 +317,35 @@ main {
   animation: fade-toast 0.25s ease-out;
 }
 
+/*========= Hero banner animations CSS ==========*/
+@keyframes bagelZoomRotate {
+  0% {
+    transform: scale(1) rotate(20deg);
+  }
+  100% {
+    transform: scale(0.7) rotate(-5deg);
+  }
+}
+.bagel-rotations {
+  animation: bagelZoomRotate 3s ease-in-out forwards;
+}
+
+.hero-side-image {
+  @apply absolute right-0 md:right-[20%] top-[15%];
+  animation: pictureMovement 5s ease-in-out forwards;
+	animation-delay: 0.2s;
+  transform-origin: center center;
+  will-change: transform;
+}
+@keyframes pictureMovement {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+	}
+}
+
+
+
 

@@ -193,6 +193,7 @@ export interface TextGroup {
 export interface BgHeroBanner {
   bg_image?: StoryblokAsset;
   main_image?: StoryblokAsset;
+  animated_side_image?: StoryblokAsset;
   overlay?: boolean;
   component: "bg_hero_banner";
   _uid: string;

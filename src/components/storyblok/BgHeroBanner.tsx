@@ -19,10 +19,19 @@ const BgHeroBanner = ({ blok }: { blok: BgHeroBanner }) => {
           <Image
             src={blok.main_image.filename}
             alt={blok.main_image.alt || "Main image"}
-            width={500}
-            height={500}
-            className="w-full max-w-[400px] h-auto"
+            width={600}
+            height={600}
+            className="max-w-[600px] w-full h-auto bagel-rotations"
           />
+          {blok?.animated_side_image?.filename && (
+            <Image
+              src={blok.animated_side_image.filename}
+              alt={blok.animated_side_image.alt || "Animated side image"}
+              width={400}
+              height={400}
+              className="max-w-[400px] w-full h-auto hero-side-image"
+            />
+          )}
         </div>
       )}
     </section>
