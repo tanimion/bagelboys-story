@@ -346,6 +346,139 @@ main {
 	}
 }
 
+/*========= Animated Frame Item CSS ==========*/
+.animated-frame {
+  transform: translateY(140px);
+  animation: goUp 3s ease-in-out forwards;
+  animation-delay: 0.2s;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+@keyframes goUp {
+	0% {
+		transform: translateY(140px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.animated-frame-image {
+	@apply absolute transition-all duration-600 ease-in-out;
+}
+
+#restaurant-image-1 {
+	top: -116px;
+	left: 37%;
+	z-index: 2;
+	max-width: 108px;
+}
+.animated-box:hover #restaurant-image-1 {
+	top: -140px;
+}
+#restaurant-image-2 {
+	z-index: 1;
+	bottom: 0;
+	left: 30%;
+	max-width: 148px;
+}
+.animated-box:hover #restaurant-image-2 {
+	bottom: -10px;
+}
+#restaurant-image-3 {
+	top: -140px;
+	right: 50px;
+	z-index: 2;
+	max-width: 51px;
+}
+.animated-box:hover #restaurant-image-3 {
+	top: -150px;
+	right: 40px;
+}
+
+#catering-image-1 {
+	top: -136px;
+	left: 33%;
+	z-index: 1;
+	max-width: 66px;
+}
+.animated-box:hover #catering-image-1 {
+	top: -150px;
+	left: 30%;
+}
+#catering-image-2 {
+	top: -136px;
+	left: 53%;
+	z-index: 1;
+	max-width: 80px;
+}
+.animated-box:hover #catering-image-2 {
+	top: -140px;
+	left: 56%;
+}
+#catering-image-3 {
+	top: -100px;
+	left: 32%;
+	z-index: 2;
+	max-width: 75px;
+}
+.animated-box:hover #catering-image-3 {
+	top: -80px;
+	left: 29%;
+}
+#catering-image-4 {
+	top: -100px;
+	left: 54%;
+	z-index: 2;
+	max-width: 75px;
+}
+.animated-box:hover #catering-image-4 {
+	top: -80px;
+	left: 58%;
+}
+#bakery-image-1 {
+	top: -120px;
+	left: 33%;
+	z-index: 3;
+	max-width: 64px;
+}
+.animated-box:hover #bakery-image-1 {
+	top: -140px;
+	left: 30%;
+}
+#bakery-image-2 {
+	top: -120px;
+	left: 40%;
+	z-index: 2;
+	max-width: 64px;
+}
+.animated-box:hover #bakery-image-2 {
+	top: -140px;
+	left: 42%;
+}
+#bakery-image-3 {
+	top: -125px;
+	left: 47%;
+	z-index: 1;
+	max-width: 64px;
+}
+.animated-box:hover #bakery-image-3 {
+	top: -150px;
+	left: 52%;
+}
+#bakery-image-4 {
+	top: -98px;
+	left: 32%;
+	z-index: 4;
+	max-width: 130px;
+}
+.animated-box:hover #bakery-image-4 {
+	max-width: 145px;
+	top: -108px;
+	left: 32%;
+}
+
 
 
 

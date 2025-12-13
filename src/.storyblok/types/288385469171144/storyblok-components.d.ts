@@ -5,6 +5,7 @@ import type {
 	StoryblokMultilink,
 	StoryblokAsset,
 } from "@/storyblok";
+import { SbBlokData } from "@storyblok/react/rsc";
 export interface Blog {
 	title?: string;
 	description?: StoryblokRichtext;
@@ -193,7 +194,7 @@ export interface BgHeroBanner {
   bg_image?: StoryblokAsset;
   main_image?: StoryblokAsset;
   animated_side_image?: StoryblokAsset;
-  overlay?: boolean;
+  items?: AnimatedFrameBox[];
   component: "bg_hero_banner";
   _uid: string;
   [k: string]: unknown;
@@ -424,6 +425,25 @@ export interface ContactFormBox {
     | FormTextarea
   )[];
   component: "contact_form_box";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface AnimatedFrameBox {
+  items?: AnimatedFrameItem[];
+  component: "animated_frame_box";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface AnimatedFrameItem {
+  title: string;
+  link?: string;
+  first_image?: StoryblokAsset;
+  second_image?: StoryblokAsset;
+  third_image?: StoryblokAsset;
+  fourth_image?: StoryblokAsset;
+  component: "animated_frame_item";
   _uid: string;
   [k: string]: unknown;
 }

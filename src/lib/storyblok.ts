@@ -150,6 +150,16 @@ const TextBlock = dynamic(
   { ssr: true }
 );
 
+const AnimatedFrameBox = dynamic(
+  () => import("@/components/storyblok/AnimatedFrameBox"),
+  { ssr: true }
+);
+
+const AnimatedFrameItem = dynamic(
+  () => import("@/components/storyblok/AnimatedFrameItem"),
+  { ssr: true }
+);
+
 const components = {
 	hero: Hero,
 	footer: Footer,
@@ -188,6 +198,8 @@ const components = {
 	contact_form_box: ContactFormBox,
 	image_box: ImageBox,
 	text_block: TextBlock,
+	animated_frame_box: AnimatedFrameBox,
+	animated_frame_item: AnimatedFrameItem,
 };
 
 export const getStoryblokApi = storyblokInit({
