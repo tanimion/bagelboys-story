@@ -10,7 +10,7 @@ const BgHeroBanner = ({ blok }: { blok: BgHeroBannerType }) => {
   return (
     <section
       {...storyblokEditable(blok as SbBlokData)}
-      className="relative w-full h-full pb-40"
+      className="relative w-full h-full pb-40 overflow-hidden"
     >
       {blok.bg_image?.filename && (
         <Image
